@@ -4,15 +4,6 @@ import './AboutPage.css'
 export function AboutPage() {
     const { t } = useI18n()
 
-    const facts = [
-        { icon: '📅', key: 'about.fact1' },
-        { icon: '📋', key: 'about.fact2' },
-        { icon: '👥', key: 'about.fact3' },
-        { icon: '🔧', key: 'about.fact4' },
-        { icon: '🚚', key: 'about.fact5' },
-        { icon: '📡', key: 'about.fact6' },
-    ]
-
     return (
         <div className="about-page page-transition">
             <div className="about-hero">
@@ -28,46 +19,69 @@ export function AboutPage() {
 
             <div className="about-content">
                 <div className="container">
-                    <div className="about-story">
-                        <div className="story-text">
+                    {/* Story Section - Simple two column */}
+                    <section className="story-section">
+                        <div className="story-left">
                             <h2>Mūsų istorija</h2>
                             <p>{t('about.text1')}</p>
                             <p>{t('about.text2')}</p>
                             <p>{t('about.text3')}</p>
                         </div>
-                        <div className="story-timeline">
-                            <div className="timeline-item">
-                                <span className="year">1996</span>
-                                <span className="event">Įmonės įkūrimas</span>
-                            </div>
-                            <div className="timeline-item">
-                                <span className="year">2000</span>
-                                <span className="event">Autoserviso plėtra</span>
-                            </div>
-                            <div className="timeline-item">
-                                <span className="year">2010</span>
-                                <span className="event">Krovinių pervežimai</span>
-                            </div>
-                            <div className="timeline-item current">
-                                <span className="year">2024</span>
-                                <span className="event">28+ metų patirtis</span>
+                        <div className="story-right">
+                            <div className="timeline-box">
+                                <div className="timeline-row">
+                                    <span className="t-year">1996</span>
+                                    <span className="t-event">Įmonės įkūrimas</span>
+                                </div>
+                                <div className="timeline-row">
+                                    <span className="t-year">2000</span>
+                                    <span className="t-event">Autoserviso plėtra</span>
+                                </div>
+                                <div className="timeline-row">
+                                    <span className="t-year">2010</span>
+                                    <span className="t-event">Krovinių pervežimai</span>
+                                </div>
+                                <div className="timeline-row highlight">
+                                    <span className="t-year">2024</span>
+                                    <span className="t-event">28+ metų patirtis</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div className="facts-section">
+                    {/* Facts Section */}
+                    <section className="facts-section">
                         <h2>Kodėl mes?</h2>
                         <div className="facts-grid">
-                            {facts.map((fact, idx) => (
-                                <div key={idx} className="fact-card">
-                                    <span className="fact-icon">{fact.icon}</span>
-                                    <span className="fact-text">{t(fact.key)}</span>
-                                </div>
-                            ))}
+                            <div className="fact-card">
+                                <span className="fact-icon">📅</span>
+                                <span className="fact-text">{t('about.fact1')}</span>
+                            </div>
+                            <div className="fact-card">
+                                <span className="fact-icon">📋</span>
+                                <span className="fact-text">{t('about.fact2')}</span>
+                            </div>
+                            <div className="fact-card">
+                                <span className="fact-icon">👥</span>
+                                <span className="fact-text">{t('about.fact3')}</span>
+                            </div>
+                            <div className="fact-card">
+                                <span className="fact-icon">🔧</span>
+                                <span className="fact-text">{t('about.fact4')}</span>
+                            </div>
+                            <div className="fact-card">
+                                <span className="fact-icon">🚚</span>
+                                <span className="fact-text">{t('about.fact5')}</span>
+                            </div>
+                            <div className="fact-card">
+                                <span className="fact-icon">📡</span>
+                                <span className="fact-text">{t('about.fact6')}</span>
+                            </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div className="company-info">
+                    {/* Company Info */}
+                    <section className="company-section">
                         <h2>Įmonės informacija</h2>
                         <div className="company-grid">
                             <div className="company-card">
@@ -84,7 +98,7 @@ export function AboutPage() {
                             </div>
                             <div className="company-card">
                                 <h4>Įkurta</h4>
-                                <p>1996,06,28</p>
+                                <p>1996.06.28</p>
                             </div>
                             <div className="company-card">
                                 <h4>Adresas</h4>
@@ -92,10 +106,10 @@ export function AboutPage() {
                             </div>
                             <div className="company-card">
                                 <h4>Veikla</h4>
-                                <p>Automobilių padangos, dalys, krovinių pervežimas</p>
+                                <p>Padangos, dalys, pervežimas</p>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>

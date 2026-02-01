@@ -4,9 +4,10 @@
     background: #0a0f1e;
 }
 
+/* Hero */
 .about-hero {
     position: relative;
-    height: 450px;
+    height: 400px;
     overflow: hidden;
 }
 
@@ -19,7 +20,7 @@
 .about-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(10, 15, 30, 0.95) 0%, rgba(10, 15, 30, 0.6) 100%);
+    background: linear-gradient(to right, rgba(10, 15, 30, 0.95) 0%, rgba(10, 15, 30, 0.5) 100%);
     display: flex;
     align-items: center;
 }
@@ -31,104 +32,106 @@
 }
 
 .about-hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 800;
     color: white;
     margin: 1rem 0;
 }
 
 .about-hero p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: rgba(255, 255, 255, 0.8);
-    max-width: 600px;
+    max-width: 500px;
 }
 
+/* Content */
 .about-content {
     padding: 4rem 2rem;
 }
 
 .about-content .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-/* FIXED: Story section with proper flex layout */
-.about-story {
+/* Story Section - FIXED LAYOUT */
+.story-section {
     display: flex;
-    gap: 4rem;
+    gap: 3rem;
     margin-bottom: 4rem;
     align-items: flex-start;
 }
 
-.story-text {
-    flex: 1;
-    min-width: 0;
+.story-left {
+    flex: 1 1 60%;
+    min-width: 300px;
 }
 
-.story-text h2 {
+.story-left h2 {
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-.story-text p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.05rem;
-    line-height: 1.9;
     margin-bottom: 1.5rem;
 }
 
-.story-timeline {
-    flex-shrink: 0;
-    width: 320px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 20px;
-    padding: 2rem;
+.story-left p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
 }
 
-.timeline-item {
+.story-right {
+    flex: 0 0 300px;
+}
+
+.timeline-box {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.timeline-row {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    padding: 1.25rem 0;
+    gap: 1rem;
+    padding: 1rem 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    position: relative;
 }
 
-.timeline-item:last-child {
+.timeline-row:last-child {
     border-bottom: none;
 }
 
-.timeline-item .year {
-    font-size: 1.2rem;
+.timeline-row .t-year {
+    font-size: 1.1rem;
     font-weight: 800;
     color: #ffc107;
-    width: 60px;
-    flex-shrink: 0;
+    min-width: 50px;
 }
 
-.timeline-item .event {
+.timeline-row .t-event {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
-.timeline-item.current {
-    background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 152, 0, 0.05) 100%);
-    margin: 0 -2rem;
-    padding: 1.25rem 2rem;
-    border-radius: 12px;
+.timeline-row.highlight {
+    background: rgba(255, 193, 7, 0.1);
+    margin: 0 -1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
     border-bottom: none;
 }
 
+/* Facts */
 .facts-section {
     margin-bottom: 4rem;
 }
 
 .facts-section h2 {
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
@@ -137,37 +140,39 @@
 .facts-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .fact-card {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
-    padding: 1.5rem;
+    gap: 1rem;
+    padding: 1.25rem;
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
+    border-radius: 14px;
     transition: all 0.3s ease;
 }
 
 .fact-card:hover {
     border-color: rgba(255, 193, 7, 0.3);
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .fact-icon {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .fact-text {
     color: rgba(255, 255, 255, 0.85);
     font-weight: 500;
+    font-size: 0.95rem;
 }
 
-.company-info h2 {
+/* Company */
+.company-section h2 {
     color: white;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
@@ -176,39 +181,40 @@
 .company-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 .company-card {
     background: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 1.5rem;
+    border-radius: 14px;
+    padding: 1.25rem;
     text-align: center;
 }
 
 .company-card h4 {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .company-card p {
     color: white;
-    font-size: 1.05rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 
-@media (max-width: 1024px) {
-    .about-story {
+/* Responsive */
+@media (max-width: 900px) {
+    .story-section {
         flex-direction: column;
-        gap: 2rem;
     }
 
-    .story-timeline {
+    .story-right {
+        flex: none;
         width: 100%;
     }
 
@@ -218,9 +224,9 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 600px) {
     .about-hero {
-        height: 350px;
+        height: 300px;
     }
 
     .facts-grid,
