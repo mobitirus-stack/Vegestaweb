@@ -62,7 +62,12 @@ export function Header() {
 
                     <button
                         className="mobile-menu-btn"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                        onClick={() => {
+                            console.log('Menu clicked!', !mobileMenuOpen)
+                            setMobileMenuOpen(!mobileMenuOpen)
+                        }}
+                        style={{ display: 'block' }}
+                        aria-label="Menu"
                     >
                         <span className={`hamburger ${mobileMenuOpen ? 'open' : ''}`}></span>
                     </button>

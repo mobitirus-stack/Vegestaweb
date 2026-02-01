@@ -20,14 +20,14 @@ export function AboutPage() {
             <div className="about-content">
                 <div className="container">
                     {/* Story Section - Simple two column */}
-                    <section className="story-section">
-                        <div className="story-left">
+                    <section className="story-section" style={{ display: 'flex', gap: '3rem', alignItems: 'flex-start' }}>
+                        <div className="story-left" style={{ flex: '1 1 60%', minWidth: '300px' }}>
                             <h2>Mūsų istorija</h2>
                             <p>{t('about.text1')}</p>
                             <p>{t('about.text2')}</p>
                             <p>{t('about.text3')}</p>
                         </div>
-                        <div className="story-right">
+                        <div className="story-right" style={{ flex: '0 0 320px' }}>
                             <div className="timeline-box">
                                 <div className="timeline-row">
                                     <span className="t-year">1996</span>
