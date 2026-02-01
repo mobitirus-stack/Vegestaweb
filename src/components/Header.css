@@ -198,29 +198,51 @@
     top: 80px;
     left: 0;
     right: 0;
+    bottom: 0;
     background: rgba(10, 15, 30, 0.98);
+    backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 1.5rem;
-    transform: translateY(-100%);
+    transform: translateX(100%);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
   }
 
   .nav.open {
-    transform: translateY(0);
+    transform: translateX(0);
     opacity: 1;
     visibility: visible;
   }
 
   .nav-link {
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 1.25rem 1rem;
+    font-size: 1.1rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 0;
+  }
+
+  .nav-link:last-child {
+    border-bottom: none;
   }
 
   .header-phone {
     display: none;
+  }
+
+  /* Show phone in mobile nav */
+  .nav::after {
+    content: '📞 +370 699 30214';
+    display: block;
+    margin-top: 2rem;
+    padding: 1.25rem;
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+    color: #0a0f1e;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 1.1rem;
   }
 }
 
@@ -231,5 +253,10 @@
 
   .logo-text {
     font-size: 1.2rem;
+  }
+
+  .lang-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
   }
 }
